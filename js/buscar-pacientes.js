@@ -1,18 +1,33 @@
-const carregaDados = () => {
-  const cursos = curso.DISCIPLINAS.map(DISCIPLINA => {
+const carregaDadosCurso = () => {
+  const dadosCurso = {
+    nomeCurso: curso.CURSO,
+    codigoCurso: curso.CODIGO_DO_CURSO,
+    duracao: curso.DURACAO,
+    cargaHoraria: curso.CARGA_HORARIA
+  };
+  adicionaDadosCurso(dadosCurso);
+};
+
+const carregaDadosTabela = () => {
+  const disciplinas = curso.DISCIPLINAS.map(DISCIPLINA => {
     return {
-      SEMESTRE: DISCIPLINA.SEMESTRE,
-      CODIGO: DISCIPLINA.CODIGO,
-      DISCIPLINA: DISCIPLINA.DISCIPLINA,
-      HORAS: DISCIPLINA.HORAS
+      semestre: DISCIPLINA?.SEMESTRE || "",
+      codigo: DISCIPLINA?.CODIGO || "",
+      nome: DISCIPLINA?.DISCIPLINA || "",
+      horas: DISCIPLINA?.HORAS || "",
+      ordem: DISCIPLINA?.ORDEM || "",
+      ementa: DISCIPLINA?.EMENTA || "",
+      nat: DISCIPLINA?.NAT || "",
+      prerequisitos: DISCIPLINA?.PREREQUISITOS || ""
     };
   });
 
-  cursos.forEach(curso => {
-    adicionaCursoNaTabela(curso);
+  disciplinas.forEach(disciplina => {
+    adicionaDisciplinaNaTabela(disciplina);
   });
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  carregaDados();
+  carregaDadosTabela();
+  carregaDadosCurso();
 });

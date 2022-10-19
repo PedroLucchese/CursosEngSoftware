@@ -2,27 +2,33 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <title>Cursos de Engenharia de Software</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cursos de Engenharia de Software</title>
   </head>
   <body>
     <header>
-      <div class="container">
-        <h2 class="titulo">BACHARELADO EM ENGENHARIA DE SOFTWARE</h2>
-      </div>
+      <section class="header-container">
+        <img src="/assets/logo.png" alt="Logo do site da UCS" class="logo" />
+      </section>
     </header>
+
+    <section class="curso-container">
+      <article class="curso-conteudo"></article>
+    </section>
+
     <main>
       <article class="container">
-        <h2>Grade Curricular</h2>
+        <!-- <h2>Grade Curricular</h2>
         <label for="filtrar-tabela">Filtro:</label>
         <input
           type="text"
           name="filtro"
           id="filtrar-tabela"
           placeholder="Digite o nome do paciente"
-        />
+        /> -->
         <table>
           <thead>
             <tr>
@@ -32,7 +38,7 @@
               <th>Número de Horas</th>
             </tr>
           </thead>
-          <tbody id="tabela-curso" class="tabela-curso"></tbody>
+          <tbody class="tabela-curso"></tbody>
         </table>
       </article>
     </main>
@@ -40,6 +46,6 @@
     <script src="js/form.js"></script>
     <script src="js/filtra.js"></script>
     <script src="js/buscar-pacientes.js"></script>
-    <script src="engSoftware.js"></script>
+    <script src="js/engSoftware.js"></script>
   </body>
 </html>
