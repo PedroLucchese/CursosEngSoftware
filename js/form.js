@@ -1,27 +1,24 @@
+function montaTr(curso) {
+  const cursoTr = document.createElement("tr");
+  cursoTr.classList.add("curso");
 
-function montaTr(paciente) {
-    var pacienteTr = document.createElement("tr");
-    pacienteTr.classList.add("paciente");
+  cursoTr.appendChild(montaTd(curso.SEMESTRE, "curso-semestre"));
+  cursoTr.appendChild(montaTd(curso.CODIGO, "curso-codigo"));
+  cursoTr.appendChild(montaTd(curso.DISCIPLINA, "curso-disciplina"));
+  cursoTr.appendChild(montaTd(curso.HORAS, "curso-horas"));
 
-    pacienteTr.appendChild(montaTd(paciente.nome, "info-nome"));
-    pacienteTr.appendChild(montaTd(paciente.peso, "info-peso"));
-    pacienteTr.appendChild(montaTd(paciente.altura, "info-altura"));
-    pacienteTr.appendChild(montaTd(paciente.gordura, "info-gordura"));
-    pacienteTr.appendChild(montaTd(paciente.imc, "info-imc"));
-
-    return pacienteTr;
+  return cursoTr;
 }
 
 function montaTd(dado, classe) {
-    var td = document.createElement("td");
-    td.classList.add(classe);
-    td.textContent = dado;
-
-    return td;
+  const td = document.createElement("td");
+  td.classList.add(classe);
+  td.textContent = dado;
+  return td;
 }
 
-function adicionaCursoNaTabela(paciente) {
-    var pacienteTr = montaTr(paciente);
-    var tabela = document.querySelector("#tabela-pacientes");
-    tabela.appendChild(pacienteTr);
+function adicionaCursoNaTabela(curso) {
+  const cursoTr = montaTr(curso);
+  const tabela = document.querySelector("#tabela-curso");
+  tabela.appendChild(cursoTr);
 }

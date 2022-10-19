@@ -1,11 +1,18 @@
-var botaoAdicionar = document.querySelector("#buscar-pacientes");
-
-botaoAdicionar.addEventListener("click", function () {
-  console.log(curso.DISCIPLINAS[10].CODIGO);
-  
-  var cursos = JSON.parse(curso);
-
-  cursos.forEach(function (paciente) {
-    adicionaCursoNaTabela(paciente);
+const carregaDados = () => {
+  const cursos = curso.DISCIPLINAS.map(DISCIPLINA => {
+    return {
+      SEMESTRE: DISCIPLINA.SEMESTRE,
+      CODIGO: DISCIPLINA.CODIGO,
+      DISCIPLINA: DISCIPLINA.DISCIPLINA,
+      HORAS: DISCIPLINA.HORAS
+    };
   });
+
+  cursos.forEach(curso => {
+    adicionaCursoNaTabela(curso);
+  });
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  carregaDados();
 });
