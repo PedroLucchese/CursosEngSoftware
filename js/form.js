@@ -2,6 +2,10 @@ function montaTr(disciplina) {
   const disciplinaTr = document.createElement("tr");
   disciplinaTr.classList.add("disciplina");
 
+  disciplina.semestre % 2 === 0
+    ? disciplinaTr.classList.add("semestre-par")
+    : disciplinaTr.classList.add("semestre-impar");
+
   disciplinaTr.appendChild(montaTd(disciplina.semestre, "disciplina-semestre"));
   disciplinaTr.appendChild(montaTd(disciplina.codigo, "disciplina-codigo"));
   disciplinaTr.appendChild(montaTd(disciplina.nome, "disciplina-nome"));

@@ -27,7 +27,22 @@ const carregaDadosTabela = () => {
   });
 };
 
+const resizeMenu = () => {
+  return window.addEventListener("scroll", () => {
+    const header = document.querySelector(".header");
+    window.pageYOffset > 20
+      ? header.classList.add("isActive")
+      : header.classList.remove("isActive");
+
+    const img = document.querySelector(".logo");
+    window.pageYOffset > 20
+      ? img.classList.add("isActive")
+      : img.classList.remove("isActive");
+  });
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   carregaDadosTabela();
   carregaDadosCurso();
+  resizeMenu();
 });
