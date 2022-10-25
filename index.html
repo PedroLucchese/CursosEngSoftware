@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cursos de Engenharia de Software</title>
-  </head>
-  <body>
-    <header class="header">
-      <nav class="header-container">
-        <img
-          src="./assets/logo_ucs_branco.png"
-          alt="Logo do site da UCS"
-          class="logo"
-        />
-      </nav>
-    </header>
 
-    <section class="curso-container">
-      <article class="curso-conteudo"></article>
-    </section>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cursos de Engenharia de Software</title>
+</head>
 
-    <main>
-      <article class="container">
-        <!-- <h2>Grade Curricular</h2>
+<body>
+  <header class="header">
+    <nav class="header-container">
+      <img src="./assets/logo_ucs_branco.png" alt="Logo do site da UCS" class="logo" />
+    </nav>
+  </header>
+
+  <section class="curso-container">
+    <article class="curso-conteudo"></article>
+  </section>
+
+  <main>
+    <article class="container">
+      <!-- <h2>Grade Curricular</h2>
         <label for="filtrar-tabela">Filtro:</label>
         <input
           type="text"
@@ -33,22 +31,31 @@
           id="filtrar-tabela"
           placeholder="Digite o nome do paciente"
         /> -->
-        <table>
-          <thead>
-            <tr>
-              <th>Semestre</th>
-              <th>Código da Disciplina</th>
-              <th>Nome da Disciplina</th>
-              <th>Número de Horas</th>
-            </tr>
-          </thead>
-          <tbody class="tabela-curso"></tbody>
-        </table>
-      </article>
-    </main>
+      <table>
+        <thead>
+          <tr>
+            <th>Semestre</th>
+            <th>Código da Disciplina</th>
+            <th>Nome da Disciplina</th>
+            <th>Número de Horas</th>
+          </tr>
+        </thead>
+        <tbody class="tabela-curso"></tbody>
+      </table>
+    </article>
+    <button type="button" data-toggle="modal" data-target="#modal.html">Launch modal</button>
+  </main>
 
-    <script src="js/form.js"></script>
-    <script src="js/loadCursos.js"></script>
-    <script src="js/engSoftware.js"></script>
-  </body>
+
+  <script src="js/form.js"></script>
+  <script src="js/loadCursos.js"></script>
+  <script src="js/engSoftware.js"></script>
+</body>
+<footer>
+  <div class="rodape">
+    <img src="./assets/logo_ucs_branco.png" alt="Logo do site da UCS" class="logo" />
+    <p>Produto feito por: Pedro Henrique, Luca Bergonzo e Guilherme Ferreto.</p>
+  </div>
+</footer>
+
 </html>
