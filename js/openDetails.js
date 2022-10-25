@@ -1,5 +1,5 @@
-var tabela = document.querySelector("#tabela-curso");
+var tabela = document.querySelector(".tabela-curso");
 
-tabela.addEventListener("click", function(event) {
-    console.log("Abrir modal");
+tabela.addEventListener("click", function (event) {
+  document.querySelector("#exampleModalCenter").modal("show");
 });

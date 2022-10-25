@@ -35,7 +35,6 @@ main {
 }
 
 @media (max-width: 1024px) {
-
   .header-container,
   .curso-conteudo,
   main {
@@ -100,17 +99,19 @@ label {
 
 footer {
   background-color: #36304a;
-  height: 6rem;
+  height: 2rem;
   color: #fff;
-  margin-bottom: 1rem;
   position: sticky;
-  top: 0;
+  bottom: 0;
   z-index: 1;
   transition: 0.4s linear;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 .rodape {
-  display: flex;
   justify-content: center;
-  padding-top: 2.16rem;
+  display: flex;
+  align-items: center;
 }
