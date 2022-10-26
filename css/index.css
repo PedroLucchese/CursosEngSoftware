@@ -33,6 +33,9 @@ main {
   flex-direction: column;
   margin: 0 auto;
 }
+main {
+  margin-bottom: 2rem;
+}
 
 @media (max-width: 1024px) {
   .header-container,
@@ -101,8 +104,10 @@ footer {
   background-color: #36304a;
   height: 2rem;
   color: #fff;
-  position: sticky;
+  position: fixed;
   bottom: 0;
+  right: 0;
+  left: 0;
   z-index: 1;
   transition: 0.4s linear;
   justify-content: center;
@@ -114,4 +119,42 @@ footer {
   justify-content: center;
   display: flex;
   align-items: center;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.modal-header h5 {
+  font-size: 2rem;
+}
+.modal-header h4 {
+  font-size: 1.5rem;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.modal-body div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-body p {
+  font-size: 1rem;
+  padding: 1rem;
 }

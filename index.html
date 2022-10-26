@@ -47,24 +47,12 @@ N0hoP+VmmDGMN5t9UJ0Z"
           <tbody id="tabela-curso" class="tabela-curso"></tbody>
         </table>
       </article>
-      <button
-        type="button"
-        class="btn btn-primary"
-        data-toggle="modal"
-        data-target="#exampleModalCenter"
-      >
-        Launch demo modal
-      </button>
     </main>
     <footer>
       <div class="rodape">
         <p>Pedro Henrique, Luca Bergonzo e Guilherme Ferreto.</p>
       </div>
     </footer>
-
-    <!-- Button trigger modal -->
-
-    <!-- Modal -->
     <div
       class="modal fade"
       id="exampleModalCenter"
@@ -76,24 +64,31 @@ N0hoP+VmmDGMN5t9UJ0Z"
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
+            <div>
+              <h5 class="modal-codigo" id="exampleModalLongTitle"></h5>
+              <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+            </div>
           </div>
-          <div class="modal-body">...</div>
+          <div class="modal-body">
+            <div>
+              <p class="modal-ementa"></p>
+              <p class="modal-infos"></p>
+            </div>
+            <div>
+              <p class="pre-requisitos"></p>
+              <div>
+                <p class="pre-requisito"></p>
+              </div>
+            </div>
+          </div>
           <div class="modal-footer">
             <button
               type="button"
               class="btn btn-secondary"
               data-dismiss="modal"
+              onclick="history.go(0)"
             >
-              Close
+              Ok
             </button>
           </div>
         </div>

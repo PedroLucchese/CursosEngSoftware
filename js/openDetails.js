@@ -1,5 +1,10 @@
 var tabela = document.querySelector(".tabela-curso");
 
-tabela.addEventListener("click", function (event) {
-  document.querySelector("#exampleModalCenter").modal("show");
+function openModal(teste) {
+  $(teste).modal("show");
+}
+
+tabela.addEventListener("click", function () {
+  const teste = document.querySelector("#exampleModalCenter");
+  openModal(teste);
 });

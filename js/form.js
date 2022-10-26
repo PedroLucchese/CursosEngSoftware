@@ -1,5 +1,8 @@
 function montaTr(disciplina) {
   const disciplinaTr = document.createElement("tr");
+  disciplinaTr.addEventListener("click", function () {
+    adicionarTextoModal(disciplina);
+  });
   disciplinaTr.classList.add("disciplina");
 
   disciplina.semestre % 2 === 0
@@ -40,4 +43,27 @@ const adicionaDadosCurso = arrayDados => {
 
   cursoConteudo.appendChild(h1);
   cursoConteudo.appendChild(h2);
+};
+
+const adicionarTextoModal = registro => {
+  const codigo = document.querySelector(".modal-codigo");
+  const title = document.querySelector(".modal-title");
+  const ementa = document.querySelector(".modal-ementa");
+  const infos = document.querySelector(".modal-infos");
+  const prerequisitostext = document.querySelector(".pre-requisitos");
+  const prerequisito = document.querySelector(".pre-requisito");
+
+  codigo.textContent = registro.codigo;
+  title.textContent = registro.nome;
+  ementa.textContent = registro.ementa;
+  infos.textContent = `${registro.semestre}º semestre - Modalidade ${
+    registro.nat == "FEP" ? "EAD" : "Presencial"
+  } - Duração ${registro.horas} horas`;
+
+  console.log(registro.prerequisitos);
+
+  if (registro.prerequisitos > 0) {
+    prerequisitostext.textContent = "Pré-Requisitos";
+    prerequisito.textContent = registro.prerequisitos;
+  }
 };
