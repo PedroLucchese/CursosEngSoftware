@@ -1,4 +1,4 @@
-var tabela = document.querySelector(".tabela-curso");
+var tabela = document.querySelector(".tabela-postagem");
 
 function openModal(teste) {
   $(teste).modal("show");

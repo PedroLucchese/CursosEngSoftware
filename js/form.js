@@ -32,24 +32,15 @@ function adicionaPostagemNaTabela(postagem) {
 }
 
 const adicionarTextoModal = registro => {
-  const codigo = document.querySelector(".modal-codigo");
-  const title = document.querySelector(".modal-title");
-  const ementa = document.querySelector(".modal-ementa");
-  const infos = document.querySelector(".modal-infos");
-  const prerequisitostext = document.querySelector(".pre-requisitos");
-  const prerequisito = document.querySelector(".pre-requisito");
+  const id = document.querySelector(".input-id");
+  const titulo = document.querySelector(".input-titulo");
+  const categoria = document.querySelector(".input-categoria");
+  const conteudo = document.querySelector(".input-conteudo");
+  const versao = document.querySelector(".input-versao");
 
-  codigo.textContent = registro.codigo;
-  title.textContent = registro.nome;
-  ementa.textContent = registro.ementa;
-  infos.textContent = `${registro.semestre}º semestre - Modalidade ${
-    registro.nat == "FEP" ? "EAD" : "Presencial"
-  } - Duração ${registro.horas} horas`;
-
-  console.log(registro.prerequisitos);
-
-  if (registro.prerequisitos > 0) {
-    prerequisitostext.textContent = "Pré-Requisitos";
-    prerequisito.textContent = registro.prerequisitos;
-  }
+  id.value = registro.codigo;
+  titulo.value = registro.nome;
+  categoria.value = registro.ementa;
+  conteudo.value = registro.semestre;
+  versao.value = registro.semestre;
 };
