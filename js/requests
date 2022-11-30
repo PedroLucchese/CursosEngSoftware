@@ -4,12 +4,12 @@ function loadPost() {
 
   fetch(URL, {
     method: "GET",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json" }
   })
-    .then((body) => {
+    .then(body => {
       return body.json();
     })
-    .then((data) => {
+    .then(data => {
       let paragrafo = document.getElementById("resposta");
       let postagem = data;
       paragrafo.innerHTML = postagem.title;
@@ -17,20 +17,22 @@ function loadPost() {
     .then(() => {
       console.log("complete");
     })
-    .catch((error) => console.error("Erro:", error.message || error));
+    .catch(error => console.error("Erro:", error.message || error));
 }
+
+console.log(loadPost());
 
 function loadPosts() {
   let URL = "https://localhost:4567/postagem/";
 
   fetch(URL, {
     method: "GET",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json" }
   })
-    .then((body) => {
+    .then(body => {
       return body.json();
     })
-    .then((data) => {
+    .then(data => {
       let paragrafo = document.getElementById("resposta");
       let postagem = data;
       paragrafo.innerHTML = postagem.title;
@@ -38,7 +40,7 @@ function loadPosts() {
     .then(() => {
       console.log("complete");
     })
-    .catch((error) => console.error("Erro:", error.message || error));
+    .catch(error => console.error("Erro:", error.message || error));
 }
 
 function loadPostsByFilter() {
@@ -47,12 +49,12 @@ function loadPostsByFilter() {
 
   fetch(URL, {
     method: "GET",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json" }
   })
-    .then((body) => {
+    .then(body => {
       return body.json();
     })
-    .then((data) => {
+    .then(data => {
       let paragrafo = document.getElementById("resposta");
       let postagem = data;
       paragrafo.innerHTML = postagem.title;
@@ -60,7 +62,7 @@ function loadPostsByFilter() {
     .then(() => {
       console.log("complete");
     })
-    .catch((error) => console.error("Erro:", error.message || error));
+    .catch(error => console.error("Erro:", error.message || error));
 }
 
 function deletePost() {
@@ -69,12 +71,12 @@ function deletePost() {
 
   fetch(URL, {
     method: "DELETE",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json" }
   })
-    .then((body) => {
+    .then(body => {
       return body.json();
     })
-    .then((data) => {
+    .then(data => {
       let paragrafo = document.getElementById("resposta");
       let postagem = data;
       paragrafo.innerHTML = postagem.title;
@@ -82,7 +84,7 @@ function deletePost() {
     .then(() => {
       console.log("complete");
     })
-    .catch((error) => console.error("Erro:", error.message || error));
+    .catch(error => console.error("Erro:", error.message || error));
 }
 
 function editPost() {
@@ -91,12 +93,12 @@ function editPost() {
 
   fetch(URL, {
     method: "PUT",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json" }
   })
-    .then((body) => {
+    .then(body => {
       return body.json();
     })
-    .then((data) => {
+    .then(data => {
       let paragrafo = document.getElementById("resposta");
       let postagem = data;
       paragrafo.innerHTML = postagem.title;
@@ -104,7 +106,7 @@ function editPost() {
     .then(() => {
       console.log("complete");
     })
-    .catch((error) => console.error("Erro:", error.message || error));
+    .catch(error => console.error("Erro:", error.message || error));
 }
 
 function createPost() {
@@ -113,6 +115,6 @@ function createPost() {
 
   fetch(URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json" }
   });
 }

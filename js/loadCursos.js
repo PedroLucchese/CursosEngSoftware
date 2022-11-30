@@ -1,5 +1,3 @@
-const carregarPosts = () => {};
-
 const carregaDadosTabela = () => {
   const disciplinas = curso.DISCIPLINAS.map(DISCIPLINA => {
     return {
