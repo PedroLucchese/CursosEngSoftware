@@ -20,8 +20,6 @@ function loadPost() {
     .catch(error => console.error("Erro:", error.message || error));
 }
 
-console.log(loadPost());
-
 function loadPosts() {
   let URL = "https://localhost:4567/postagem/";
 

@@ -8,3 +8,9 @@ tabela.addEventListener("click", function () {
   const teste = document.querySelector("#exampleModalCenter");
   openModal(teste);
 });
+
+function openModalCadastro() {
+  removerValuesModal();
+  const teste = document.querySelector("#createModalCenter");
+  openModal(teste);
+}

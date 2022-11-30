@@ -39,7 +39,7 @@ N0hoP+VmmDGMN5t9UJ0Z"
             class="input"
             required=""
           />
-          <button>Adicionar Postagem</button>
+          <button onclick="openModalCadastro()">Adicionar Postagem</button>
         </div>
       </article>
     </section>
@@ -86,6 +86,48 @@ N0hoP+VmmDGMN5t9UJ0Z"
                 <label>Categorias</label> <input class="input-categoria" />
                 <label>Conteúdo</label> <input class="input-conteudo" />
                 <label>Versão</label> <input class="input-versao" />
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+              onclick="history.go(0)"
+            >
+              Alterar
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+              onclick="requisicaoAJAX()"
+            >
+              Excluir
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="createModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div>
+              <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+              <form>
+                <label>Título</label> <input class="input-titulo" />
+                <label>Categorias</label> <input class="input-categoria" />
+                <label>Conteúdo</label> <input class="input-conteudo" />
               </form>
             </div>
           </div>

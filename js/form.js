@@ -1,19 +1,14 @@
 function montaTr(postagem) {
   const postagemTr = document.createElement("tr");
   postagemTr.addEventListener("click", function () {
-    adicionarTextoModal(postagem);
+    adicionarValuesModal(postagem);
   });
   postagemTr.classList.add("postagem");
-
-  postagem.semestre % 2 === 0
-    ? postagemTr.classList.add("semestre-par")
-    : postagemTr.classList.add("semestre-impar");
-
-  postagemTr.appendChild(montaTd(postagem.semestre, "postagem-semestre"));
-  postagemTr.appendChild(montaTd(postagem.codigo, "postagem-codigo"));
-  postagemTr.appendChild(montaTd(postagem.nome, "postagem-nome"));
-  postagemTr.appendChild(montaTd(postagem.horas, "postagem-horas"));
-  postagemTr.appendChild(montaTd(postagem.horas, "postagem-horas"));
+  postagemTr.appendChild(montaTd(postagem.id, "postagem-id"));
+  postagemTr.appendChild(montaTd(postagem.title, "postagem-titulo"));
+  postagemTr.appendChild(montaTd(postagem.categories, "postagem-categorias"));
+  postagemTr.appendChild(montaTd(postagem.content, "postagem-conteudo"));
+  postagemTr.appendChild(montaTd(postagem.version, "postagem-versão"));
 
   return postagemTr;
 }
@@ -31,16 +26,30 @@ function adicionaPostagemNaTabela(postagem) {
   tabela.appendChild(postagemTr);
 }
 
-const adicionarTextoModal = registro => {
+const adicionarValuesModal = registro => {
   const id = document.querySelector(".input-id");
   const titulo = document.querySelector(".input-titulo");
   const categoria = document.querySelector(".input-categoria");
   const conteudo = document.querySelector(".input-conteudo");
   const versao = document.querySelector(".input-versao");
 
-  id.value = registro.codigo;
-  titulo.value = registro.nome;
-  categoria.value = registro.ementa;
-  conteudo.value = registro.semestre;
-  versao.value = registro.semestre;
+  id.value = registro.id;
+  titulo.value = registro.title;
+  categoria.value = registro.categories;
+  conteudo.value = registro.content;
+  versao.value = registro.version;
+};
+
+const removerValuesModal = () => {
+  const id = document.querySelector(".input-id");
+  const titulo = document.querySelector(".input-titulo");
+  const categoria = document.querySelector(".input-categoria");
+  const conteudo = document.querySelector(".input-conteudo");
+  const versao = document.querySelector(".input-versao");
+
+  id.value = null;
+  titulo.value = null;
+  categoria.value = null;
+  conteudo.value = null;
+  versao.value = null;
 };

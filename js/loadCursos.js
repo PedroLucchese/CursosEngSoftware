@@ -1,19 +1,22 @@
-const carregaDadosTabela = () => {
-  const disciplinas = curso.DISCIPLINAS.map(DISCIPLINA => {
-    return {
-      semestre: DISCIPLINA?.SEMESTRE || "",
-      codigo: DISCIPLINA?.CODIGO || "",
-      nome: DISCIPLINA?.DISCIPLINA || "",
-      horas: DISCIPLINA?.HORAS || "",
-      ordem: DISCIPLINA?.ORDEM || "",
-      ementa: DISCIPLINA?.EMENTA || "",
-      nat: DISCIPLINA?.NAT || "",
-      prerequisitos: DISCIPLINA?.PREREQUISITOS || ""
-    };
-  });
+function loadPost() {
+  let URL = "https://localhost:4567/postagem";
 
-  disciplinas.forEach(disciplina => {
-    adicionaPostagemNaTabela(disciplina);
+  fetch(URL, {
+    method: "GET",
+    headers: { "Content-Type": "application/json" }
+  })
+    .then(body => {
+      return body.json();
+    })
+    .then(data => {
+      carregaDadosTabela(data);
+    })
+    .catch(error => console.error("Erro:", error.message || error));
+}
+
+const carregaDadosTabela = data => {
+  data.forEach(postagem => {
+    adicionaPostagemNaTabela(postagem);
   });
 };
 
@@ -32,6 +35,6 @@ const resizeMenu = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  carregaDadosTabela();
+  loadPost();
   resizeMenu();
 });
