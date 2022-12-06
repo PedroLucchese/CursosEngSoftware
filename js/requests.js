@@ -74,11 +74,6 @@ function deletePost() {
     .then(body => {
       return body.json();
     })
-    .then(data => {
-      let paragrafo = document.getElementById("resposta");
-      let postagem = data;
-      paragrafo.innerHTML = postagem.title;
-    })
     .then(() => {
       console.log("complete");
     })
