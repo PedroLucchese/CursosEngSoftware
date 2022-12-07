@@ -2,6 +2,7 @@ function montaTr(postagem) {
   const postagemTr = document.createElement("tr");
   postagemTr.addEventListener("click", function () {
     adicionarValuesModal(postagem);
+    let id = postagem.id
   });
   postagemTr.classList.add("postagem");
   postagemTr.appendChild(montaTd(postagem.id, "postagem-id"));
@@ -20,9 +21,16 @@ function montaTd(dado, classe) {
   return td;
 }
 
-function adicionaPostagemNaTabela(postagem) {
-  const postagemTr = montaTr(postagem);
+const removeAllChildNodes = (parent) => {
+  while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+  }
+}
+
+async function adicionaPostagemNaTabela(postagem) {
   const tabela = document.querySelector(".tabela-postagem");
+  await removeAllChildNodes(tabela)
+  const postagemTr = montaTr(postagem);
   tabela.appendChild(postagemTr);
 }
 

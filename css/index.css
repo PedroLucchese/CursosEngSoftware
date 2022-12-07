@@ -76,6 +76,7 @@ th {
   padding: 0.7em;
   margin: 0;
   text-align: center;
+  overflow: hidden;
 }
 
 .semestre-par {
@@ -95,8 +96,12 @@ td {
 
 @media (max-width: 767px) {
   td {
-    font-size: 0.8rem;
+    font-size: 10px;
     overflow: hidden;
+  }
+
+  th {
+    font-size: 10px;
   }
 }
 
@@ -116,8 +121,8 @@ footer {
   left: 0;
   z-index: 1;
   transition: 0.4s linear;
-  justify-content: center;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -125,6 +130,10 @@ footer {
   justify-content: center;
   display: flex;
   align-items: center;
+}
+
+.rodape p {
+  text-align: center;
 }
 
 .modal-footer {

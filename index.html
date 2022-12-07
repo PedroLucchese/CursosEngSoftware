@@ -36,8 +36,8 @@ N0hoP+VmmDGMN5t9UJ0Z"
           <input
             placeholder="Pesquisar Post"
             type="text"
-            class="input"
-            required=""
+            class="filter"
+            oninput="filterPost()"
           />
           <button onclick="openModalCadastro()">Adicionar Postagem</button>
         </div>
@@ -94,7 +94,7 @@ N0hoP+VmmDGMN5t9UJ0Z"
               type="button"
               class="btn btn-secondary"
               data-dismiss="modal"
-              onclick="history.go(0)"
+              onclick="editPost()"
             >
               Alterar
             </button>
@@ -102,7 +102,7 @@ N0hoP+VmmDGMN5t9UJ0Z"
               type="button"
               class="btn btn-secondary"
               data-dismiss="modal"
-              onclick="requisicaoAJAX()"
+              onclick="deletePost()"
             >
               Excluir
             </button>
@@ -125,9 +125,10 @@ N0hoP+VmmDGMN5t9UJ0Z"
             <div>
               <h5 class="modal-title" id="exampleModalLongTitle"></h5>
               <form>
-                <label>Título</label> <input class="input-titulo" />
-                <label>Categorias</label> <input class="input-categoria" />
-                <label>Conteúdo</label> <input class="input-conteudo" />
+                <label>Título</label> <input class="input-titulo-create" />
+                <label>Categorias</label>
+                <input class="input-categoria-create" />
+                <label>Conteúdo</label> <input class="input-conteudo-create" />
               </form>
             </div>
           </div>
@@ -136,17 +137,9 @@ N0hoP+VmmDGMN5t9UJ0Z"
               type="button"
               class="btn btn-secondary"
               data-dismiss="modal"
-              onclick="history.go(0)"
+              onclick="createPost()"
             >
-              Alterar
-            </button>
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-              onclick="requisicaoAJAX()"
-            >
-              Excluir
+              Criar
             </button>
           </div>
         </div>
@@ -173,5 +166,9 @@ N0hoP+VmmDGMN5t9UJ0Z"
     <script src="js/loadCursos.js"></script>
     <script src="js/engSoftware.js"></script>
     <script src="js/openDetails.js"></script>
+    <script src="js/deletePost.js"></script>
+    <script src="js/createPost.js"></script>
+    <script src="js/editPost.js"></script>
+    <script src="js/filterPost.js"></script>
   </body>
 </html>
